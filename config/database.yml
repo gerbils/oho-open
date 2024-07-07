@@ -1,0 +1,17 @@
+#
+default: &default
+  adapter: sqlite3
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: db/dev.db
+
+test:
+  <<: *default
+  database: db/test.db
+
+production:
+  <<: *default
+  database: /tmp/oho-open.db
