@@ -1,0 +1,25 @@
+%h1 Listing oauth_clients
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th App
+      %th App secret
+      %th
+      %th
+      %th
+
+  %tbody
+    - @oauth_clients.each do |oauth_client|
+      %tr
+        %td= oauth_client.name
+        %td= oauth_client.app_id
+        %td= oauth_client.app_secret
+        %td= link_to 'Show', oauth_client
+        %td= link_to 'Edit', edit_oauth_client_path(oauth_client)
+        %td= link_to 'Destroy', oauth_client, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Oauth client', new_oauth_client_path

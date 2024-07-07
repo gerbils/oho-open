@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @oauth_client.name
+%p
+  %b App:
+  = @oauth_client.app_id
+%p
+  %b App secret:
+  = @oauth_client.app_secret
+
+= link_to 'Edit', edit_oauth_client_path(@oauth_client)
+\|
+= link_to 'Back', oauth_clients_path
