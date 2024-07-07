@@ -21,7 +21,7 @@ class AuthController < ApplicationController
       state: params[:state]
     }
     access_grant = current_user.access_grants.create(create_hash)
-    redirect_to access_grant.redirect_uri_for(params[:redirect_uri])
+    redirect_to access_grant.redirect_uri_for(params[:redirect_uri]), allow_other_host: true
   end
 
   # POST
