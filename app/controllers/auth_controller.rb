@@ -1,8 +1,8 @@
 class AuthController < ApplicationController
   # This is our new function that comes before Devise's one
 
-  before_action :authenticate_oauth_user!, :except => [:access_token]
-  before_action :authenticate_user!, :except => [:access_token]
+  before_action :authenticate_oauth_user!, :except => [:access_token, :user]
+  before_action :authenticate_user!, :except => [:access_token, :user]
   skip_before_action :verify_authenticity_token, :only => [:access_token]
 
   def authorize
